@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="MobileStore@localhost">
+  <database-model serializer="dbm" dbms="MSSQL" family-id="MSSQL" format-version="4.17">
+    <root id="1">
+      <ServerVersion>12.0.4100</ServerVersion>
+    </root>
+    <database id="2" parent="1" name="BillManagement">
+      <ObjectId>35</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="3" parent="1" name="BookStore">
+      <ObjectId>17</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="4" parent="1" name="DMS">
+      <ObjectId>27</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="5" parent="1" name="ItemDB">
+      <ObjectId>7</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="6" parent="1" name="MobileStore">
+      <ObjectId>8</ObjectId>
+      <Current>1</Current>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+      <Fingerprint>8.44490/E02BE4A3-E87F-4BE7-A439-487546D03481@DESKTOP-SQLF46U</Fingerprint>
+    </database>
+    <database id="7" parent="1" name="PE2020">
+      <ObjectId>9</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="8" parent="1" name="PracticalTest">
+      <ObjectId>18</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="9" parent="1" name="RentalCar">
+      <ObjectId>23</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="10" parent="1" name="ReportServer">
+      <ObjectId>5</ObjectId>
+      <Collation>Latin1_General_CI_AS_KS_WS</Collation>
+    </database>
+    <database id="11" parent="1" name="ReportServerTempDB">
+      <ObjectId>6</ObjectId>
+      <Collation>Latin1_General_CI_AS_KS_WS</Collation>
+    </database>
+    <database id="12" parent="1" name="dntLam">
+      <ObjectId>15</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="13" parent="1" name="employee">
+      <ObjectId>30</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="14" parent="1" name="hanashop">
+      <ObjectId>20</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="15" parent="1" name="henry">
+      <ObjectId>13</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="16" parent="1" name="laloth">
+      <ObjectId>19</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="17" parent="1" name="library">
+      <ObjectId>26</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="18" parent="1" name="managesales">
+      <ObjectId>29</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="19" parent="1" name="master">
+      <ObjectId>1</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="20" parent="1" name="messenger">
+      <ObjectId>10</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="21" parent="1" name="model">
+      <ObjectId>3</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="22" parent="1" name="msdb">
+      <ObjectId>4</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="23" parent="1" name="nettruyen">
+      <ObjectId>12</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="24" parent="1" name="quizOnline">
+      <ObjectId>21</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="25" parent="1" name="store">
+      <ObjectId>34</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <database id="26" parent="1" name="tempdb">
+      <ObjectId>2</ObjectId>
+      <Collation>SQL_Latin1_General_CP1_CI_AS</Collation>
+    </database>
+    <schema id="27" parent="6" name="INFORMATION_SCHEMA">
+      <ObjectId>3</ObjectId>
+    </schema>
+    <schema id="28" parent="6" name="db_accessadmin">
+      <ObjectId>16385</ObjectId>
+    </schema>
+    <schema id="29" parent="6" name="db_backupoperator">
+      <ObjectId>16389</ObjectId>
+    </schema>
+    <schema id="30" parent="6" name="db_datareader">
+      <ObjectId>16390</ObjectId>
+    </schema>
+    <schema id="31" parent="6" name="db_datawriter">
+      <ObjectId>16391</ObjectId>
+    </schema>
+    <schema id="32" parent="6" name="db_ddladmin">
+      <ObjectId>16387</ObjectId>
+    </schema>
+    <schema id="33" parent="6" name="db_denydatareader">
+      <ObjectId>16392</ObjectId>
+    </schema>
+    <schema id="34" parent="6" name="db_denydatawriter">
+      <ObjectId>16393</ObjectId>
+    </schema>
+    <schema id="35" parent="6" name="db_owner">
+      <ObjectId>16384</ObjectId>
+    </schema>
+    <schema id="36" parent="6" name="db_securityadmin">
+      <ObjectId>16386</ObjectId>
+    </schema>
+    <schema id="37" parent="6" name="dbo">
+      <ObjectId>1</ObjectId>
+      <IntrospectionTimestamp>2021-10-22.20:22:49.647</IntrospectionTimestamp>
+      <Current>1</Current>
+    </schema>
+    <schema id="38" parent="6" name="guest">
+      <ObjectId>2</ObjectId>
+    </schema>
+    <schema id="39" parent="6" name="sys">
+      <ObjectId>4</ObjectId>
+    </schema>
+    <table id="40" parent="37" name="Category">
+      <ObjectId>245575913</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.107</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.243</ModifiedTimestamp>
+    </table>
+    <table id="41" parent="37" name="Order">
+      <ObjectId>277576027</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.110</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.230</ModifiedTimestamp>
+    </table>
+    <table id="42" parent="37" name="OrderDetail">
+      <ObjectId>309576141</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.113</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.237</ModifiedTimestamp>
+    </table>
+    <table id="43" parent="37" name="Product">
+      <ObjectId>341576255</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.117</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.243</ModifiedTimestamp>
+    </table>
+    <table id="44" parent="37" name="Role">
+      <ObjectId>373576369</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.120</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.247</ModifiedTimestamp>
+    </table>
+    <table id="45" parent="37" name="User">
+      <ObjectId>405576483</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.123</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.247</ModifiedTimestamp>
+    </table>
+    <column id="46" parent="40" name="categoryID">
+      <Position>1</Position>
+      <DataType>char(10 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="47" parent="40" name="categoryName">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="48" parent="40" name="PK_tblCategorys">
+      <Position>1</Position>
+      <ColNames>categoryID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="49" parent="40" name="PK_tblCategorys">
+      <ObjectId>261575970</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.107</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.107</ModifiedTimestamp>
+      <ColNames>categoryID</ColNames>
+      <UnderlyingIndexName>PK_tblCategorys</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="50" parent="41" name="orderID">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="51" parent="41" name="userID">
+      <Position>2</Position>
+      <DataType>char(20 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="52" parent="41" name="date">
+      <Position>3</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="53" parent="41" name="total">
+      <Position>4</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="54" parent="41" name="PK_tblOrder">
+      <Position>1</Position>
+      <ColNames>orderID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="55" parent="41" name="PK_tblOrder">
+      <ObjectId>293576084</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.110</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.110</ModifiedTimestamp>
+      <ColNames>orderID</ColNames>
+      <UnderlyingIndexName>PK_tblOrder</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="56" parent="41" name="FK_tblOrder_tblUsers">
+      <ObjectId>437576597</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.223</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.223</ModifiedTimestamp>
+      <ColNames>userID</ColNames>
+      <RefTableId>405576483</RefTableId>
+      <RefTableName>User</RefTableName>
+      <RefKeyName>PK_tblUsers</RefKeyName>
+      <RefColNames>userID</RefColNames>
+    </foreign-key>
+    <column id="57" parent="42" name="orderDetailID">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="58" parent="42" name="orderID">
+      <Position>2</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="59" parent="42" name="productID">
+      <Position>3</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="60" parent="42" name="price">
+      <Position>4</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="61" parent="42" name="quantity">
+      <Position>5</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <index id="62" parent="42" name="PK_tblOrderDetail">
+      <Position>1</Position>
+      <ColNames>orderDetailID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="63" parent="42" name="PK_tblOrderDetail">
+      <ObjectId>325576198</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.113</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.113</ModifiedTimestamp>
+      <ColNames>orderDetailID</ColNames>
+      <UnderlyingIndexName>PK_tblOrderDetail</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="64" parent="42" name="FK_tblOrderDetail_tblOrder">
+      <ObjectId>453576654</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.230</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.230</ModifiedTimestamp>
+      <ColNames>orderDetailID</ColNames>
+      <RefTableId>277576027</RefTableId>
+      <RefTableName>Order</RefTableName>
+      <RefKeyName>PK_tblOrder</RefKeyName>
+      <RefColNames>orderID</RefColNames>
+    </foreign-key>
+    <foreign-key id="65" parent="42" name="FK_tblOrderDetail_tblProducts">
+      <ObjectId>469576711</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.237</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.237</ModifiedTimestamp>
+      <ColNames>productID</ColNames>
+      <RefTableId>341576255</RefTableId>
+      <RefTableName>Product</RefTableName>
+      <RefKeyName>PK_tblProducts</RefKeyName>
+      <RefColNames>productID</RefColNames>
+    </foreign-key>
+    <column id="66" parent="43" name="productID">
+      <Position>1</Position>
+      <SequenceIdentity>1</SequenceIdentity>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="67" parent="43" name="productName">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="68" parent="43" name="price">
+      <Position>3</Position>
+      <DataType>float|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="69" parent="43" name="quantity">
+      <Position>4</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="70" parent="43" name="description">
+      <Position>5</Position>
+      <DataType>nvarchar(max)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="71" parent="43" name="manufacturer">
+      <Position>6</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="72" parent="43" name="categoryID">
+      <Position>7</Position>
+      <DataType>char(10 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="73" parent="43" name="condition">
+      <Position>8</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="74" parent="43" name="image">
+      <Position>9</Position>
+      <DataType>varchar(max)|0s</DataType>
+    </column>
+    <index id="75" parent="43" name="PK_tblProducts">
+      <Position>1</Position>
+      <ColNames>productID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="76" parent="43" name="PK_tblProducts">
+      <ObjectId>357576312</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.117</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.117</ModifiedTimestamp>
+      <ColNames>productID</ColNames>
+      <UnderlyingIndexName>PK_tblProducts</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="77" parent="43" name="FK_tblProducts_tblCategorys">
+      <ObjectId>485576768</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.243</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.243</ModifiedTimestamp>
+      <ColNames>categoryID</ColNames>
+      <RefTableId>245575913</RefTableId>
+      <RefTableName>Category</RefTableName>
+      <RefKeyName>PK_tblCategorys</RefKeyName>
+      <RefColNames>categoryID</RefColNames>
+    </foreign-key>
+    <column id="78" parent="44" name="roleID">
+      <Position>1</Position>
+      <DataType>int|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="79" parent="44" name="name">
+      <Position>2</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+    </column>
+    <index id="80" parent="44" name="PK_tblRoles">
+      <Position>1</Position>
+      <ColNames>roleID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="81" parent="44" name="PK_tblRoles">
+      <ObjectId>389576426</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.120</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.120</ModifiedTimestamp>
+      <ColNames>roleID</ColNames>
+      <UnderlyingIndexName>PK_tblRoles</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <column id="82" parent="45" name="fullName">
+      <Position>1</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+    </column>
+    <column id="83" parent="45" name="userID">
+      <Position>2</Position>
+      <DataType>char(20 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="84" parent="45" name="password">
+      <Position>3</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="85" parent="45" name="email">
+      <Position>4</Position>
+      <DataType>nvarchar(50 char)|0s</DataType>
+    </column>
+    <column id="86" parent="45" name="phone">
+      <Position>5</Position>
+      <DataType>nvarchar(20 char)|0s</DataType>
+    </column>
+    <column id="87" parent="45" name="roleID">
+      <Position>6</Position>
+      <DataType>int|0s</DataType>
+    </column>
+    <index id="88" parent="45" name="PK_tblUsers">
+      <Position>1</Position>
+      <ColNames>userID</ColNames>
+      <Clustering>1</Clustering>
+      <Unique>1</Unique>
+    </index>
+    <key id="89" parent="45" name="PK_tblUsers">
+      <ObjectId>421576540</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.123</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.123</ModifiedTimestamp>
+      <ColNames>userID</ColNames>
+      <UnderlyingIndexName>PK_tblUsers</UnderlyingIndexName>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="90" parent="45" name="FK_tblUsers_tblRoles">
+      <ObjectId>501576825</ObjectId>
+      <CreatedTimestamp>2021-10-22.20:05:23.247</CreatedTimestamp>
+      <ModifiedTimestamp>2021-10-22.20:05:23.247</ModifiedTimestamp>
+      <ColNames>roleID</ColNames>
+      <RefTableId>373576369</RefTableId>
+      <RefTableName>Role</RefTableName>
+      <RefKeyName>PK_tblRoles</RefKeyName>
+      <RefColNames>roleID</RefColNames>
+    </foreign-key>
+  </database-model>
+</dataSource>
