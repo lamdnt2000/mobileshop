@@ -7,7 +7,7 @@
         <class>com.mobileshop.group8.model.OrderDetail</class>
         <class>com.mobileshop.group8.model.Product</class>
         <class>com.mobileshop.group8.model.Role</class>
-        <class>com.mobileshop.group8.model.User</class>
+        <class>com.mobileshop.group8.model.Member</class>
         <properties>
             <property name="hibernate.connection.url" value="jdbc:sqlserver://localhost:1433;database=MobileStore"/>
             <property name="hibernate.connection.driver_class" value="com.microsoft.sqlserver.jdbc.SQLServerDriver"/>

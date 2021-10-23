@@ -4,14 +4,13 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "User", schema = "dbo")
-public class User {
+@Table(name="Member",schema="dbo")
+public class Member {
     private String fullName;
     private String userId;
     private String password;
     private String email;
     private String phone;
-    private Role roleByRoleId;
 
     @Basic
     @Column(name = "fullName", nullable = true, length = 50)
@@ -67,26 +66,16 @@ public class User {
     public boolean equals(Object o) {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
-        User user = (User) o;
-        return Objects.equals(fullName, user.fullName) &&
-                Objects.equals(userId, user.userId) &&
-                Objects.equals(password, user.password) &&
-                Objects.equals(email, user.email) &&
-                Objects.equals(phone, user.phone);
+        Member member = (Member) o;
+        return Objects.equals(fullName, member.fullName) &&
+                Objects.equals(userId, member.userId) &&
+                Objects.equals(password, member.password) &&
+                Objects.equals(email, member.email) &&
+                Objects.equals(phone, member.phone);
     }
 
     @Override
     public int hashCode() {
         return Objects.hash(fullName, userId, password, email, phone);
-    }
-
-    @ManyToOne
-    @JoinColumn(name = "roleID", referencedColumnName = "roleID")
-    public Role getRoleByRoleId() {
-        return roleByRoleId;
-    }
-
-    public void setRoleByRoleId(Role roleByRoleId) {
-        this.roleByRoleId = roleByRoleId;
     }
 }
