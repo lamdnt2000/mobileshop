@@ -4,13 +4,14 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name="Member",schema="dbo")
+@Table(name = "Member", schema = "dbo")
 public class Member {
     private String fullName;
     private String userId;
     private String password;
     private String email;
     private String phone;
+    private Role roleByRoleId;
 
     @Basic
     @Column(name = "fullName", nullable = true, length = 50)
@@ -77,5 +78,15 @@ public class Member {
     @Override
     public int hashCode() {
         return Objects.hash(fullName, userId, password, email, phone);
+    }
+
+    @ManyToOne
+    @JoinColumn(name = "roleID", referencedColumnName = "roleID")
+    public Role getRoleByRoleId() {
+        return roleByRoleId;
+    }
+
+    public void setRoleByRoleId(Role roleByRoleId) {
+        this.roleByRoleId = roleByRoleId;
     }
 }
