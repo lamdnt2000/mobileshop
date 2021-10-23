@@ -21,14 +21,14 @@
 
             <div th:each="cart: ${session.CART}"
                  class="cart-row">
-                <p th:with="total=${total + cart.value.tblProducts.price*cart.value.quantity}" th:text="${total}"/>
+                <p th:with="total=${total + cart.value.product.price*cart.value.quantity}" th:text="${total}"/>
                 <div class="cart-item cart-column">
-                    <img class="cart-item-image" th:src="@{image/{url}(url=${cart.value.tblProducts.image})}"
+                    <img class="cart-item-image" th:src="@{image/{url}(url=${cart.value.product.image})}"
                          width="100"
                          height="100">
-                    <span class="cart-item-title" th:text="${cart.value.tblProducts.productName}"/>
+                    <span class="cart-item-title" th:text="${cart.value.product.productName}"/>
                 </div>
-                <span class="cart-price cart-column" th:text="${cart.value.tblProducts.price}+' vnd'"></span>
+                <span class="cart-price cart-column" th:text="${cart.value.product.price}+' vnd'"></span>
                 <div class="cart-quantity cart-column">
                     <form th:action="@{/removecart}" method="GET">
                         <input class="cart-quantity-input" type="number" th:value="${cart.value.quantity}"
@@ -44,7 +44,7 @@
             <div class="cart-total">
                 <strong class="cart-total-title">Total money:</strong>
                 <span class="cart-total-price"
-                      th:text="${#aggregates.sum(session.CART.values.![tblProducts.price*quantity])}"></span>
+                      th:text="${#aggregates.sum(session.CART.values.![product.price*quantity])}"></span>
             </div>
 
         </div>
@@ -56,7 +56,7 @@
 
 </div>
 </div>
-<button class="button" onclick="window.location.href = '/store  '">Continue shopping</button>
+<button class="button" onclick="window.location.href = '/mobileshop'">Continue shopping</button>
 <button class="button" onclick="window.location.href = 'Controller?url=CHECKOUT'">Check out</button>
 <br>
 </body>
