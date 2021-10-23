@@ -4,7 +4,7 @@ import javax.persistence.*;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Member", schema = "dbo")
+@Table(name="Member", schema="dbo")
 public class Member {
     private String fullName;
     private String userId;
@@ -12,6 +12,17 @@ public class Member {
     private String email;
     private String phone;
     private Role roleByRoleId;
+
+
+    private String passwordComfirm;
+    @Transient
+    public String getPasswordComfirm() {
+        return passwordComfirm;
+    }
+
+    public void setPasswordComfirm(String passwordComfirm) {
+        this.passwordComfirm = passwordComfirm;
+    }
 
     @Basic
     @Column(name = "fullName", nullable = true, length = 50)
@@ -34,7 +45,7 @@ public class Member {
     }
 
     @Basic
-    @Column(name = "password", nullable = false, length = 50)
+    @Column(name = "password", nullable = false, length = 255)
     public String getPassword() {
         return password;
     }
@@ -68,11 +79,7 @@ public class Member {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Member member = (Member) o;
-        return Objects.equals(fullName, member.fullName) &&
-                Objects.equals(userId, member.userId) &&
-                Objects.equals(password, member.password) &&
-                Objects.equals(email, member.email) &&
-                Objects.equals(phone, member.phone);
+        return Objects.equals(fullName, member.fullName) && Objects.equals(userId, member.userId) && Objects.equals(password, member.password) && Objects.equals(email, member.email) && Objects.equals(phone, member.phone);
     }
 
     @Override

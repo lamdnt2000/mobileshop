@@ -1,5 +1,7 @@
 package com.mobileshop.group8.model;
 
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+
 import javax.persistence.*;
 import java.util.Objects;
 
@@ -13,6 +15,10 @@ public class Role {
     @Column(name = "roleID", nullable = false)
     public int getRoleId() {
         return roleId;
+    }
+
+    public void setRoleId(Integer roleId) {
+        this.roleId = roleId;
     }
 
     public void setRoleId(int roleId) {
@@ -42,4 +48,6 @@ public class Role {
     public int hashCode() {
         return Objects.hash(roleId, name);
     }
+
+
 }
