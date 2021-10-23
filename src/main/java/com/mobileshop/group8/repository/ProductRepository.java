@@ -7,7 +7,7 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface ProductRepository extends JpaRepository<Product, Integer> {
-    List<Product> findBy();
     List<Product> findByProductName(String productName);
+    List<Product> findAll();
     Product findByProductId(@Param("productID") Integer productId);
 }

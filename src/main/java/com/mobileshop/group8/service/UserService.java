@@ -27,7 +27,4 @@ public class UserService {
         userRepository.save(user);
     }
 
-    public Member checkLogin(String userId, String password){
-        return userRepository.findByUserIdAndPassword(userId,password);
-    }
 }
