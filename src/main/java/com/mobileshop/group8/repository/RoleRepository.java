@@ -7,6 +7,4 @@ import org.springframework.data.repository.query.Param;
 
 public interface RoleRepository extends JpaRepository<Role, Integer> {
     Role findByRoleId(@Param("roleID") Integer id);
-
-
 }
