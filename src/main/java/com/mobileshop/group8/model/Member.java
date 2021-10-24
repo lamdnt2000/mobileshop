@@ -24,6 +24,9 @@ public class Member {
         this.passwordComfirm = passwordComfirm;
     }
 
+
+
+
     @Basic
     @Column(name = "fullName", nullable = true, length = 50)
     public String getFullName() {

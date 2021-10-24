@@ -60,14 +60,16 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .logout()
                 .permitAll();*/
-        http.authorizeRequests().antMatchers("/viewproduct","/productlist").hasAnyAuthority("user").
-                and().formLogin()
+        http.authorizeRequests().antMatchers("/login","/register","/addtocart","/view","/","/removecart","/cart").permitAll().
+                antMatchers("/checkout").hasRole("user").
+                antMatchers("/admin").hasRole("admin").and().formLogin()
                 .loginProcessingUrl("/spring_login_check") // Submit URL
                 .loginPage("/login")//
                 .defaultSuccessUrl("/")//
                 .failureUrl("/login?error=true")//
                 .usernameParameter("userId")//
-                .passwordParameter("password");
+                .passwordParameter("password").and().exceptionHandling()
+                .accessDeniedPage("/403");
                 // Cấu hình cho Logout Page.
 
     }

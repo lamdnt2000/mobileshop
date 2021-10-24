@@ -73,3 +73,7 @@ body{
     border-radius: 3px;
     outline: none;
 }
+.has-error{
+    color: red;
+    display: inline-block;
+}

@@ -8,6 +8,8 @@ import com.mobileshop.group8.model.Product;
 import com.mobileshop.group8.model.cart.Cart;
 import com.mobileshop.group8.model.cart.CartBean;
 import com.mobileshop.group8.service.*;
+import com.mobileshop.group8.validator.ProductValidator;
+import com.mobileshop.group8.validator.UserValidation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -36,6 +38,8 @@ public class BaseController {
     private SercurityService sercurityService;
     @Autowired
     private CategoryService categoryService;
+    @Autowired
+    private ProductValidator productValidator;
     public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/static/image";
 
 
@@ -128,45 +132,36 @@ public class BaseController {
 
 
     }
-    @RequestMapping(value="/product", method= RequestMethod.GET)
+    @RequestMapping(value="/admin/product", method= RequestMethod.GET)
     public String initPage(Model model){
         List<Category> categories = categoryService.findAll();
         model.addAttribute("product",new Product());
         model.addAttribute("categories",categories);
-
         return "addproduct";
     }
-    @RequestMapping(value="/product", method = RequestMethod.POST)
+
+    @RequestMapping(value="/admin/product", method = RequestMethod.POST)
     public String saveProduct(@RequestParam("productImage") MultipartFile file,
-                              @ModelAttribute("productDTO")Product productDTO,
-                              @RequestParam("image")String image,
-                              @RequestParam("productName")String name,
-                              @RequestParam("description")String description,
-                              @RequestParam("categoryByCategoryId")String category,
-                              @RequestParam("manufacturer")String manufacturer,
-                              @RequestParam("condition")String condition,
-                              @RequestParam("price")float price,
-                              @RequestParam("quantity")int quantity)
+                              @ModelAttribute("product")Product product, BindingResult bindingResult, Model model)
             throws IOException {
-        Product product = new Product();
-        String imageUUID;
+        String imageUUID="default.jpg";;
         if (!file.isEmpty()) {
             imageUUID = file.getOriginalFilename();
-            Path fileNameAndPath = Paths.get(uploadDir, imageUUID);
-            Files.write(fileNameAndPath, file.getBytes());
-        } else {
-            imageUUID = image;
+
         }
         product.setImage(imageUUID);
-        product.setProductName(name);
-        product.setQuantity(quantity);
-        product.setPrice(price);
-        product.setDescription(description);
-        product.setCategoryByCategoryId(categoryService.findById(category));
-        product.setCondition(condition);
-        product.setManufacturer(manufacturer);
-        productService.save(product);
-        return "redirect:/";
+        productValidator.validate(product,bindingResult);
+        if (bindingResult.hasErrors()){
+            List<Category> categories = categoryService.findAll();
+            model.addAttribute("categories",categories);
+            return "addproduct";
+        }
+        else {
+            productService.save(product);
+            Path fileNameAndPath = Paths.get(uploadDir, imageUUID);
+            Files.write(fileNameAndPath, file.getBytes());
+            return "redirect:/";
+        }
     }
 
 }

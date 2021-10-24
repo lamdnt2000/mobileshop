@@ -1,4 +1,4 @@
-package com.mobileshop.group8.service;
+package com.mobileshop.group8.validator;
 
 import com.mobileshop.group8.model.Member;
 import com.mobileshop.group8.repository.UserRepository;
@@ -16,25 +16,25 @@ public class UserValidation implements Validator {
     @Override
     public void validate(Object target, Errors errors) {
         Member user = (Member) target;
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors,"userId","Not Empty");
+        ValidationUtils.rejectIfEmptyOrWhitespace(errors,"userId","field.required");
         if (user.getFullName().length()<3 || user.getFullName().length() > 32){
-            errors.rejectValue("fullName","Size.userForm.fullName");
+            errors.rejectValue("fullName","Size");
         }
         if (userRepository.findByUserId(user.getUserId()) != null ){
-            errors.rejectValue("userId", "Duplicate.userForm.userId");
+            errors.rejectValue("userId", "Duplicate");
         }
-        if (user.getPhone().length()<3 || user.getPhone().length() > 32){
-            errors.rejectValue("phone","Size.userForm.phone");
+        if (user.getPhone().length()!=10){
+            errors.rejectValue("phone","Size");
         }
         if (user.getEmail().length()<3 || user.getEmail().length() > 32){
-            errors.rejectValue("email","Size.userForm.email");
+            errors.rejectValue("email","Size");
         }
-        ValidationUtils.rejectIfEmptyOrWhitespace(errors,"password", "Not Empty");
+
         if (user.getPassword().length() <4 || user.getPassword().length() > 32){
-            errors.rejectValue("password", "Size.userForm.password");
+            errors.rejectValue("password", "Size");
         }
         if (!user.getPassword().equals(user.getPasswordComfirm())){
-            errors.rejectValue("passwordConfirm","Diff.userForm.passwordConfirm");
+            errors.rejectValue("passwordComfirm","Diff");
         }
     }
 
