@@ -11,6 +11,10 @@ import com.mobileshop.group8.service.*;
 import com.mobileshop.group8.validator.ProductValidator;
 import com.mobileshop.group8.validator.UserValidation;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.web.authentication.logout.SecurityContextLogoutHandler;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,11 +23,14 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.view.RedirectView;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.security.Principal;
 import java.util.List;
 
 @Controller
@@ -40,6 +47,8 @@ public class BaseController {
     private CategoryService categoryService;
     @Autowired
     private ProductValidator productValidator;
+    @Autowired
+    private CheckOutService checkOutService;
     public static String uploadDir = System.getProperty("user.dir") + "/src/main/resources/static/image";
 
 
@@ -91,7 +100,8 @@ public class BaseController {
 
 
     @RequestMapping(value ="/cart")
-    public ModelAndView viewCart(HttpSession session){
+    public ModelAndView viewCart(HttpServletRequest request){
+
         return new ModelAndView(Constants.VIEW_CART_URL);
     }
 
@@ -116,7 +126,7 @@ public class BaseController {
 
 
     @RequestMapping(value = "/login")
-    public String initLogin(Model model, String error, String logout){
+    public String initLogin(Model model, String error, String logout, HttpServletRequest request){
 
         if (sercurityService.isAuthenticated()){
             return "redirect:/";
@@ -129,10 +139,18 @@ public class BaseController {
         }
 
         return "loginpage";
-
-
     }
-    @RequestMapping(value="/admin/product", method= RequestMethod.GET)
+
+    @RequestMapping(value = "/logout")
+    public String logout(HttpServletRequest request, HttpServletResponse response){
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        if (auth != null) {
+            new SecurityContextLogoutHandler().logout(request, response, auth);
+        }
+        return "redirect:/";
+    }
+
+    @RequestMapping(value="/product", method= RequestMethod.GET)
     public String initPage(Model model){
         List<Category> categories = categoryService.findAll();
         model.addAttribute("product",new Product());
@@ -140,7 +158,7 @@ public class BaseController {
         return "addproduct";
     }
 
-    @RequestMapping(value="/admin/product", method = RequestMethod.POST)
+    @RequestMapping(value="/product", method = RequestMethod.POST)
     public String saveProduct(@RequestParam("productImage") MultipartFile file,
                               @ModelAttribute("product")Product product, BindingResult bindingResult, Model model)
             throws IOException {
@@ -160,8 +178,21 @@ public class BaseController {
             productService.save(product);
             Path fileNameAndPath = Paths.get(uploadDir, imageUUID);
             Files.write(fileNameAndPath, file.getBytes());
-            return "redirect:/";
+            return "redirect:/product";
         }
     }
 
+    @RequestMapping("/checkout")
+    public String doCheckout(HttpSession session){
+        boolean result = checkOutService.checkOut(session);
+        if (result){
+            session.removeAttribute(Constants.ATTR_CART);
+        }
+        return "viewcart";
+    }
+
+    @GetMapping("/access-denied")
+    public String getAccessDenied() {
+        return "403";
+    }
 }

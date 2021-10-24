@@ -11,9 +11,11 @@ public class OrderDetail {
     private double price;
     private int quantity;
     private Order orderByOrderDetailId;
+    private int productId;
 
     @Id
     @Column(name = "orderDetailID", nullable = false)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getOrderDetailId() {
         return orderDetailId;
     }
@@ -76,5 +78,15 @@ public class OrderDetail {
 
     public void setOrderByOrderDetailId(Order orderByOrderDetailId) {
         this.orderByOrderDetailId = orderByOrderDetailId;
+    }
+
+    @Basic
+    @Column(name = "productID", nullable = false)
+    public int getProductId() {
+        return productId;
+    }
+
+    public void setProductId(int productId) {
+        this.productId = productId;
     }
 }

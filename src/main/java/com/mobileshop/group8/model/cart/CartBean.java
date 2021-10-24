@@ -1,5 +1,7 @@
 package com.mobileshop.group8.model.cart;
 
+import com.mobileshop.group8.model.Product;
+
 import java.util.HashMap;
 
 public class CartBean extends HashMap {
@@ -25,4 +27,12 @@ public class CartBean extends HashMap {
         return false;
     }
 
+    public float getTotal(){
+        float total = 0;
+        for (Object object:this.values()){
+            Cart cart = (Cart) object;
+            total += cart.getProduct().getPrice()*cart.getQuantity();
+        }
+        return total;
+    }
 }

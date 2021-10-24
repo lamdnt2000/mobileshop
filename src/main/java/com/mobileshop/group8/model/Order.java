@@ -5,13 +5,15 @@ import java.sql.Timestamp;
 import java.util.Objects;
 
 @Entity
-@Table(name = "Order", schema = "dbo")
+@Table(name = "Orders", schema = "dbo")
 public class Order {
     private int orderId;
     private Timestamp date;
     private double total;
+    private String userId;
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "orderID", nullable = false)
     public int getOrderId() {
         return orderId;
@@ -54,5 +56,15 @@ public class Order {
     @Override
     public int hashCode() {
         return Objects.hash(orderId, date, total);
+    }
+
+    @Basic
+    @Column(name = "userID", nullable = false, length = 20)
+    public String getUserId() {
+        return userId;
+    }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 }

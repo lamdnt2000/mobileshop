@@ -16,7 +16,7 @@
         <span class="cart-quantity cart-header cart-column">Quantity</span>
     </div>
 
-    <div th:if="${session.CART!=null or !session.CART.empty}">
+    <div th:if="${session.CART!=null and !session.CART.empty}">
         <div th:with="total=0" class="cart-items">
 
             <div th:each="cart: ${session.CART}"
@@ -57,7 +57,7 @@
 </div>
 </div>
 <button class="button" onclick="window.location.href = '/mobileshop'">Continue shopping</button>
-<button class="button" onclick="window.location.href = 'Controller?url=CHECKOUT'">Check out</button>
+<button class="button" onclick="window.location.href = '/mobileshop/checkout'">Check out</button>
 <br>
 </body>
 

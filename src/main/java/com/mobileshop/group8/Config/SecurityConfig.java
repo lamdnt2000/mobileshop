@@ -12,6 +12,7 @@ import org.springframework.security.config.annotation.web.configuration.EnableWe
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
 @EnableWebSecurity
@@ -61,16 +62,20 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .logout()
                 .permitAll();*/
         http.authorizeRequests().antMatchers("/login","/register","/addtocart","/view","/","/removecart","/cart").permitAll().
-                antMatchers("/checkout").hasRole("user").
-                antMatchers("/admin").hasRole("admin").and().formLogin()
+                antMatchers("/checkout").hasAnyAuthority("user").
+                antMatchers("/product").hasAnyAuthority("admin").and().formLogin()
                 .loginProcessingUrl("/spring_login_check") // Submit URL
                 .loginPage("/login")//
                 .defaultSuccessUrl("/")//
                 .failureUrl("/login?error=true")//
                 .usernameParameter("userId")//
-                .passwordParameter("password").and().exceptionHandling()
-                .accessDeniedPage("/403");
+                .passwordParameter("password").and().exceptionHandling().accessDeniedHandler(accessDeniedHandler());
                 // Cấu hình cho Logout Page.
 
+    }
+
+    @Bean
+    public AccessDeniedHandler accessDeniedHandler() {
+        return new CustomAccessDeniedHandler();
     }
 }
